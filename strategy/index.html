@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>策略模式在表单提交校验的实践</title>
+  <style>
+    .form {
+      padding: 200px;
+      font-size: 20px;
+    }
+    input {
+      font-size: 20px;
+    }
+    span {
+      color: red;
+    }
+    .isSubmiting {
+      display: none;
+    }
+    button {
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form class="form" action="http://api.careteen.wang/register" id="registerForm" method="post">
+    请输入用户名：<input type="text" id="userName" name="userName" placeholder="请输入用户名"/ >
+    <span id="userNameError"></span><br>
+    请输入密码：<input type="text" id="password" name="password"/ placeholder="请输入密码">
+    <span id="passwordError"></span><br>
+    请输入手机号码：<input type="text" id="phoneNumber" name="phoneNumber"/ placeholder="请输入手机号">
+    <span id="phoneNumberError"></span><br>
+    <p id="isSubmiting" class="isSubmiting">正在提交表单</p>
+    <button>提交</button>
+  </form>
+  <script src="./function-aop.js"></script>
+  <script src="./strategies.js"></script>
+  <script src="./validator.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
